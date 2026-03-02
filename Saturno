@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Mi Saturno ❤️</title>
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background: radial-gradient(circle, #000428, #004e92);
+    overflow:hidden;
+    font-family: Arial, sans-serif;
+    color:white;
+}
+
+/* Planeta */
+.saturno{
+    width:200px;
+    height:200px;
+    background: radial-gradient(circle at 30% 30%, #f5c16c, #d18b2e);
+    border-radius:50%;
+    position:relative;
+    z-index:2;
+}
+
+/* Anillo */
+.anillo{
+    position:absolute;
+    width:400px;
+    height:400px;
+    border-radius:50%;
+    animation: girar 12s linear infinite;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* Corazones */
+.corazon{
+    position:absolute;
+    font-size:18px;
+    color:pink;
+    white-space:nowrap;
+}
+
+/* Animación */
+@keyframes girar{
+    from{ transform:rotate(0deg); }
+    to{ transform:rotate(360deg); }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Música -->
+<iframe width="0" height="0"
+src="https://www.youtube.com/embed/8s_edTC0FYM?autoplay=1&loop=1&playlist=8s_edTC0FYM"
+frameborder="0"
+allow="autoplay">
+</iframe>
+
+<div class="anillo">
+    <div class="corazon" style="top:0;">❤️ Te quiero mucho</div>
+    <div class="corazon" style="bottom:0;">❤️ Te amo</div>
+    <div class="corazon" style="left:0;">❤️ Mi luz</div>
+    <div class="corazon" style="right:0;">❤️ Mi sol</div>
+    <div class="corazon" style="top:50px; right:50px;">❤️ Mi princesa</div>
+    <div class="corazon" style="bottom:50px; left:50px;">❤️ Mi niña</div>
+</div>
+
+<div class="saturno"></div>
+
+</body>
+</html>
