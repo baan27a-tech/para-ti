@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Para Ti 💛</title>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: black;
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+    .mensaje {
+      font-size: clamp(1.8rem, 6vw, 3.5rem);
+      color: gold;
+      margin: 0.5em 0 0.8em;
+      line-height: 1.2;
+      text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    }
+    .cancion {
+      font-size: 1.3rem;
+      color: #ccc;
+      margin: 1em 0 1.5em;
+    }
+    iframe {
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(255, 215, 0, 0.15);
+      max-width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="mensaje">
+    Te Amo Muchote Mis Ojitos Brillantes 💛
+  </div>
+
+  <div class="cancion">
+    Nublado - Paulo Londra 🎧
+  </div>
+
+  <!-- YouTube con mejor accesibilidad y responsive -->
+  <iframe 
+    width="560" 
+    height="315"
+    src="https://www.youtube.com/embed/8s_edTC0FYM?rel=0"
+    title="Nublado - Paulo Londra (Video Oficial)"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+  </iframe>
+
+</body>
+</html>
