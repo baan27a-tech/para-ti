@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nublado de amor ♡ Para ti</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      background: radial-gradient(circle at center, #1a0d2b, #0a0015, #000);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff;
+    }
+
+    .container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .word-cloud {
+      position: absolute;
+      width: 95%;
+      height: 95%;
+      top: 2.5%;
+      left: 2.5%;
+    }
+
+    .word {
+      position: absolute;
+      user-select: none;
+      pointer-events: none;
+      white-space: nowrap;
+      text-shadow: 0 0 12px rgba(173, 216, 230, 0.9), 0 0 20px rgba(255, 105, 180, 0.6);
+      animation: float 30s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0%   { transform: translate(0, 0) rotate(0deg); }
+      20%  { transform: translate(50px, -60px) rotate(4deg); }
+      40%  { transform: translate(-40px, 80px) rotate(-6deg); }
+      60%  { transform: translate(60px, -50px) rotate(8deg); }
+      80%  { transform: translate(-30px, 40px) rotate(-4deg); }
+      100% { transform: translate(0, 0) rotate(0deg); }
+    }
+
+    .center-heart {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      font-size: 4rem;
+      font-weight: bold;
+      color: #ff69b4;
+      text-shadow: 0 0 40px #ff1493, 0 0 80px #c71585;
+      animation: pulse 4s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50%      { transform: scale(1.12); opacity: 0.9; }
+    }
+
+    .text-overlay {
+      position: absolute;
+      bottom: 30px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: 1.5rem;
+      color: #add8e6;
+      text-shadow: 0 0 15px #000;
+    }
+
+    #music-player {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 20;
+      padding: 12px 20px;
+      background: rgba(255, 105, 180, 0.3);
+      border: 2px solid #ff69b4;
+      border-radius: 30px;
+      color: white;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    #music-player:hover {
+      background: rgba(255, 105, 180, 0.6);
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="word-cloud" id="cloud"></div>
+    
+    <div class="center-heart">
+      Nublado de amor<br>
+      <span style="font-size: 2.5rem; color: #ff1493;">♡ Solo contigo ♡</span>
+    </div>
+
+    <div class="text-overlay">
+      Envíaselo a la persona que más quieres 💕 (y ponle play a nuestra canción)
+    </div>
+
+    <button id="music-player">Reproducir Nublado ♡</button>
+  </div>
+
+  <!-- YouTube embed para Nublado (audio oficial) -->
+  <iframe 
+    id="youtube-audio" 
+    width="0" 
+    height="0" 
+    src="https://www.youtube.com/embed/8s_edTC0FYM?enablejsapi=1&autoplay=0&loop=1&playlist=8s_edTC0FYM" 
+    frameborder="0" 
+    allow="autoplay; encrypted-media" 
+    allowfullscreen>
+  </iframe>
+
+  <script>
+    // Palabras flotantes (agregué algunas inspiradas en la canción)
+    const words = [
+      { text: "Nublado", size: 70, color: "#add8e6" },
+      { text: "Tu risa", size: 50, color: "#ff69b4" },
+      { text: "Mi cielo", size: 60, color: "#ff1493" },
+      { text: "Amor sincero", size: 45, color: "#ff00aa" },
+      { text: "Ambiente nublado", size: 40, color: "#add8e6" },
+      { text: "Pasión", size: 55, color: "#ff69b4" },
+      { text: "Juntos", size: 65, color: "#ff1493" },
+      { text: "Te amo", size: 80, color: "#ff00ff" },
+      { text: "Sueños", size: 38, color: "#ffb6c1" },
+      { text: "Mi vida", size: 52, color: "#ff69b4" },
+      { text: "Siempre", size: 48, color: "#add8e6" },
+      { text: "Corazón", size: 58, color: "#ff1493" },
+      { text: "Inspiración", size: 42, color: "#ff00aa" },
+      { text: "Besos", size: 35, color: "#ffb6c1" },
+      { text: "Eres todo", size: 50, color: "#ff69b4" },
+      { text: "Felicidad", size: 44, color: "#add8e6" },
+      { text: "Mi reina", size: 55, color: "#ff1493" }
+      // Puedes agregar más aquí
+    ];
+
+    const cloud = document.getElementById('cloud');
+
+    words.forEach(word => {
+      const el = document.createElement('div');
+      el.className = 'word';
+      el.textContent = word.text;
+      el.style.fontSize = `${word.size}px`;
+      el.style.color = word.color;
+      
+      const x = Math.random() * 80 + 10;
+      const y = Math.random() * 80 + 10;
+      el.style.left = `${x}%`;
+      el.style.top = `${y}%`;
+      
+      el.style.animationDuration = `${20 + Math.random() * 25}s`;
+      el.style.animationDelay = `${Math.random() * -30}s`;
+      
+      cloud.appendChild(el);
+    });
+
+    // Control de música con botón (para que funcione autoplay en móviles y Chrome)
+    const playerBtn = document.getElementById('music-player');
+    const youtubeIframe = document.getElementById('youtube-audio');
+
+    playerBtn.addEventListener('click', () => {
+      // Enviar comando de play a YouTube
+      youtubeIframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+      playerBtn.textContent = '¡Reproduciendo Nublado! ♡';
+      playerBtn.style.background = 'rgba(255, 105, 180, 0.7)';
+      playerBtn.disabled = true; // Para que no se pulse mil veces
+    });
+  </script>
+
+</body>
+</html>
