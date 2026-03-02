@@ -1,63 +1,46 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Para Ti 💛</title>
-  <style>
-    body {
-      margin: 0;
-      min-height: 100vh;
-      background: black;
-      color: white;
-      font-family: Arial, Helvetica, sans-serif;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 20px;
-    }
-    .mensaje {
-      font-size: clamp(1.8rem, 6vw, 3.5rem);
-      color: gold;
-      margin: 0.5em 0 0.8em;
-      line-height: 1.2;
-      text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-    }
-    .cancion {
-      font-size: 1.3rem;
-      color: #ccc;
-      margin: 1em 0 1.5em;
-    }
-    iframe {
-      border: none;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(255, 215, 0, 0.15);
-      max-width: 100%;
-    }
-  </style>
-</head>
-<body>
+<!DOCTYPE html>  
+<html lang="es">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Galaxia - Tu Música</title>  
+    <style>  
+        body {  
+            background-color: #000;  
+            color: #fff;  
+            text-align: center;  
+            padding-top: 50px;  
+            font-family: Arial, sans-serif;  
+        }  
+        .mensaje {  
+            font-size: 2em;  
+            color: #ffd700;  
+            margin-bottom: 30px;  
+        }  
+        .detalles {  
+            font-size: 1.5em;  
+            color: #4287f5;  
+            margin: 20px 0;  
+        }  
+        /* Estilo para el reproductor */
+        .reproductor {  
+            margin-top: 30px;  
+            width: 100%;  
+            max-width: 450px;  
+            border-radius: 12px;  
+        }  
+    </style>  
+</head>  
+<body>  
+    <div class="mensaje">Te Amo Muchote Mis Ojitos Brillantes💛</div>  
+    <p>Base: tlanex · Adaptación para Jotab 💫</p>  
+    <div class="detalles">Detalles Mr 💙🌹♥️</div>  
 
-  <div class="mensaje">
-    Te Amo Muchote Mis Ojitos Brillantes 💛
-  </div>
+    <!-- Reproductor de Spotify de "Nublado" - Paulo Londra -->
+    <iframe class="reproductor" src="https://open.spotify.com/embed/track/5QO79kh1waicV47BqGRL3Q?utm_source=generator" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 
-  <div class="cancion">
-    Nublado - Paulo Londra 🎧
-  </div>
+    <!-- Si prefieres YouTube Music, usa este enlace en su lugar: -->
+    <!-- <iframe class="reproductor" src="https://music.youtube.com/embed/8s_edTCOFYM?si=z0X7QnZ1Z1aZ2bZ3" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe> -->
 
-  <!-- YouTube con mejor accesibilidad y responsive -->
-  <iframe 
-    width="560" 
-    height="315"
-    src="https://www.youtube.com/embed/8s_edTC0FYM?rel=0"
-    title="Nublado - Paulo Londra (Video Oficial)"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen>
-  </iframe>
-
-</body>
-
-</html>
+</body>  
+</html>  
